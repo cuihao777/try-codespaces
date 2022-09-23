@@ -1,19 +1,22 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
     "configurations": [
         {
             "type": "lldb",
             "request": "launch",
-            "preLaunchTask": "swiftc with debug",
-            "name": "Debug",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "name": "Debug try-codespaces",
+            "program": "${workspaceFolder:try-codespaces}/.build/debug/try-codespaces",
             "args": [],
-            "sourceLanguages": [
-                "swift"
-            ]
+            "cwd": "${workspaceFolder:try-codespaces}",
+            "preLaunchTask": "swift: Build Debug try-codespaces"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release try-codespaces",
+            "program": "${workspaceFolder:try-codespaces}/.build/release/try-codespaces",
+            "args": [],
+            "cwd": "${workspaceFolder:try-codespaces}",
+            "preLaunchTask": "swift: Build Release try-codespaces"
         }
     ]
 }
